@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/screens/HomeScreen/homeScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -34,7 +35,7 @@ class LoginScreen extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 hintText: 'Username, email address or mobile num...',
-                hintStyle: TextStyle(color: Colors.white24,fontSize:17),
+                hintStyle: TextStyle(color: Colors.white24, fontSize: 17),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -46,7 +47,7 @@ class LoginScreen extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 hintText: 'Password',
-                hintStyle: TextStyle(color: Colors.white24,fontSize:17),
+                hintStyle: TextStyle(color: Colors.white24, fontSize: 17),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -56,7 +57,12 @@ class LoginScreen extends StatelessWidget {
               height: 15,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
@@ -71,7 +77,10 @@ class LoginScreen extends StatelessWidget {
               onPressed: () {},
               child: const Text(
                 'Forgotten password?',
-                style: TextStyle(color: Colors.white, fontSize: 18,fontWeight: FontWeight.w400),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400),
               ),
             ),
             Spacer(),
@@ -92,7 +101,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Image.asset(
                   "assets/images/meta-logo.png",
                   fit: BoxFit.contain,
