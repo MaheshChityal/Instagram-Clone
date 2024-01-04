@@ -25,9 +25,9 @@ class LoginScreen extends StatelessWidget {
           children: [
             Spacer(),
             Image.asset(
-              "assets/images/insta-logo.png",
-              fit: BoxFit.contain,
-              height: MediaQuery.of(context).size.height * 0.10,
+              "assets/images/instagram-text-icon.png",
+              fit: BoxFit.contain,color: Colors.white,
+              height: MediaQuery.of(context).size.height * 0.07,
             ),
             const SizedBox(
               height: 100,
