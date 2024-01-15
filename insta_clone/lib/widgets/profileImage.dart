@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/screens/Stories/story.dart';
 
 class ProfileImage extends StatelessWidget {
   final Image;
@@ -11,9 +12,27 @@ class ProfileImage extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage("assets/images/" + Image),
-            radius: 45,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => StoryScreen(),
+                ),
+              );
+            },
+            child: Container(
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/images/" + Image),
+                radius: 45,
+              ),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.red,
+                  width: 3.0,
+                ),
+              ),
+            ),
           ),
           SizedBox(
             height: 3,

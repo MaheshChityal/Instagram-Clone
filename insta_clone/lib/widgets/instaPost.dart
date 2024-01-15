@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insta_clone/BottomNavBar/botomNavBAr.dart';
+import 'package:insta_clone/screens/Stories/story.dart';
 
 class InstaPost extends StatelessWidget {
-  final PostImage;
+  String PostImage;
   String accName;
   InstaPost({super.key, required this.PostImage, required this.accName});
 
@@ -18,9 +19,28 @@ class InstaPost extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/' + PostImage),
-                    radius: 15,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => StoryScreen(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      child: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/' + PostImage),
+                        radius: 15,
+                      ),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.red,
+                          width: 1.5,
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 10,
@@ -99,7 +119,7 @@ class InstaPost extends StatelessWidget {
             //   children: [
             //     Text(
             //       '239872 likes',
-                  
+
             //       style: TextStyle(
             //         color: Colors.white,
             //       ),
