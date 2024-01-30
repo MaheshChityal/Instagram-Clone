@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/Signup/nameScreen.dart';
 import 'package:insta_clone/screens/HomeScreen/homeScreen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -26,7 +27,8 @@ class LoginScreen extends StatelessWidget {
             Spacer(),
             Image.asset(
               "assets/images/instagram-text-icon.png",
-              fit: BoxFit.contain,color: Colors.white,
+              fit: BoxFit.contain,
+              color: Colors.white,
               height: MediaQuery.of(context).size.height * 0.07,
             ),
             const SizedBox(
@@ -58,10 +60,8 @@ class LoginScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>  HomeScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -94,7 +94,13 @@ class LoginScreen extends StatelessWidget {
                       side: BorderSide(color: Colors.blue),
                       minimumSize: const Size.fromHeight(50),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => NameScreen(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'Create new account',
                       style: TextStyle(fontSize: 18, color: Colors.blue),
